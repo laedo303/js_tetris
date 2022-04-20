@@ -108,7 +108,7 @@ const game = {
       const row = tetromino[i];
 
       for (let j = 0; j < row.length; j++) {
-        if (row[j] === 'x') {
+        if (row[j] !== 'o') {
           area[y + i][x + j] = tetromino[i][j]
         }
       }
@@ -139,7 +139,7 @@ const game = {
     for (let i = 0; i < tetromino.length; i++) {
       const row = tetromino[i];
       for (let j = 0; j < row.length; j++) {
-        if (row[j] === 'x') {
+        if (row[j] !== 'o') {
           this.area[y + i][x + j] = tetromino[i][j]
         }
       }
@@ -165,7 +165,7 @@ const showArea = area => {
 
     for (let x = 0; x < line.length; x++) {
       const block = line[x];
-      if (block === 'x') {
+      if (block !== 'o') {
         context.fillStyle = 'darkmagenta';
         context.strokeStyle = 'white';
         context.fillRect(x * SIZE_BLOCK, y * SIZE_BLOCK, SIZE_BLOCK, SIZE_BLOCK);
